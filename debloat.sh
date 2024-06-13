@@ -10,16 +10,41 @@ uninstall() {
     pm uninstall -k --user 0 $1
 }
 
+select_device() {
+    devices=("a20s")
+
+    clear
+
+    echo -e "Select a device:\n"
+    for i in "${!device_codenames[@]}"; do
+        echo "[$((i+1))] ${device_codenames[i]}"
+    done
+
+    echo -e "\n"
+    read -p "Your option: " choice
+
+    if [[ $choice -ge 1 && $choice -le ${#device_codenames[@]} ]]; then
+        selected_device=${device_codenames[choice-1]}
+        debloat_list="https://raw.githubusercontent.com/davnpsh/samsung-debloat-script/main/devices/$selected_device"
+
+        echo $debloat_list
+    else
+        echo "Invalid choice. Please select a valid number."
+        exit 1
+    fi
+}
+
 display_warning() {
     clear
 
-    echo "WARNING: I am not responsible for damages done to your device. You must always read the contents of a script you download from the Internet.\n\nDo you want to proceed? [y/n]"
+    echo "WARNING: I am not responsible for damages done to your device. You must always read the contents of a script you download from the Internet."
 
-    read -r response
+    echo -e "\n"
+    read -p "Do you want to proceed? [y/n]" response
 
     case $response in
         [yY])
-            echo "Confirmed"
+            select_device
             ;;
         [nN])
             echo "User canceled. Exiting."
@@ -27,7 +52,7 @@ display_warning() {
             ;;
         *)
             echo "Invalid input. Please enter 'y' for yes or 'n' for no."
-            display_warning
+            exit 1
             ;;
     esac
 }

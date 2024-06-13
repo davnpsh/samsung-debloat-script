@@ -11,6 +11,11 @@ uninstall() {
 }
 
 debloat() {
+
+    clear
+
+    echo -e "Debloating...\n"
+
     url=$1
     temp_file="/data/local/tmp/debloat_list.txt"
 

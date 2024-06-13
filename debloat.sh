@@ -11,7 +11,7 @@ uninstall() {
 }
 
 debloat() {
-
+    echo $1
 }
 
 select_device() {
@@ -19,19 +19,21 @@ select_device() {
 
     device_codenames=("a20s")
 
-    echo -e "Select a device:\n"
+    echo "For reference, your device codename is: $device_codename"
+
+    echo -e "\nSelect a supported device:\n"
     for i in "${!device_codenames[@]}"; do
         echo "[$((i+1))] ${device_codenames[i]}"
     done
 
-    echo -e "\n"
-    read -p "Your option: " choice
+    printf "\nYour option: "
+    read choice
 
     if [[ $choice -ge 1 && $choice -le ${#device_codenames[@]} ]]; then
         selected_device=${device_codenames[choice-1]}
         debloat_list="https://raw.githubusercontent.com/davnpsh/samsung-debloat-script/main/devices/$selected_device"
 
-        echo $debloat_list
+        debloat $debloat_list
     else
         echo "Invalid choice. Please select a valid number."
         exit 1
@@ -43,8 +45,8 @@ display_warning() {
 
     echo "WARNING: I am not responsible for damages done to your device. You must always read the contents of a script you download from the Internet."
 
-    echo -e "\n"
-    read -p "Do you want to proceed? [y/n]" response
+    printf "\nDo you want to proceed? [y/n] "
+    read response
 
     case $response in
         [yY])

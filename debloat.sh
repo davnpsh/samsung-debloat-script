@@ -11,7 +11,25 @@ uninstall() {
 }
 
 debloat() {
-    echo $1
+    url=$1
+    temp_file="/data/local/tmp/debloat_list.txt"
+
+    while IFS= read -r line; do
+        # Skip empty lines and lines starting with # (comments)
+        if [ -z "$line" ] || [ "${line:0:1}" = "#" ]; then
+            continue
+        fi
+
+        package_name=$line
+
+        # Search for the package and uninstall if found
+        if search "$package_name" > /dev/null; then
+            echo "Uninstalling $package_name"
+            #uninstall "$package_name"
+        else
+            echo "Package $package_name not found. Skipping."
+        fi
+    done < $temp_file
 }
 
 select_device() {

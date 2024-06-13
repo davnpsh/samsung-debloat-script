@@ -35,3 +35,5 @@ display_warning() {
 main() {
     display_warning
 }
+
+main

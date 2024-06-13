@@ -11,7 +11,6 @@ uninstall() {
 }
 
 debloat() {
-
     clear
 
     echo -e "Debloating...\n"
@@ -32,11 +31,13 @@ debloat() {
         # Search for the package and uninstall if found
         if search "$package_name" > /dev/null; then
             echo "Uninstalling $package_name"
-            #uninstall "$package_name"
+            uninstall "$package_name"
         else
             echo "Package $package_name not found. Skipping."
         fi
     done < $temp_file
+
+    echo -e "\nDone."
 }
 
 select_device() {
@@ -65,7 +66,7 @@ select_device() {
     fi
 }
 
-display_warning() {
+main() {
     clear
 
     echo "WARNING: I am not responsible for damages done to your device. You must always read the contents of a script you download from the Internet."
@@ -86,10 +87,6 @@ display_warning() {
             exit 1
             ;;
     esac
-}
-
-main() {
-    display_warning
 }
 
 main

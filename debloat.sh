@@ -10,10 +10,14 @@ uninstall() {
     pm uninstall -k --user 0 $1
 }
 
-select_device() {
-    devices=("a20s")
+debloat() {
 
+}
+
+select_device() {
     clear
+
+    device_codenames=("a20s")
 
     echo -e "Select a device:\n"
     for i in "${!device_codenames[@]}"; do
@@ -42,6 +46,7 @@ display_warning() {
     echo -e "\nDo you want to proceed? [y/n]"
     read response
 
+    echo "Debug: response='$response'"
     case $response in
         [yY])
             select_device

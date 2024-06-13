@@ -1,1 +1,1 @@
-# Samsung De-bloat Scripts (SDS)
+# Samsung De-bloat Script (SDS)

@@ -24,8 +24,8 @@ select_device() {
         echo "[$((i+1))] ${device_codenames[i]}"
     done
 
-    echo -e "\nYour option:"
-    read choice
+    echo -e "\n"
+    read -p "Your option: " choice
 
     if [[ $choice -ge 1 && $choice -le ${#device_codenames[@]} ]]; then
         selected_device=${device_codenames[choice-1]}
@@ -43,10 +43,9 @@ display_warning() {
 
     echo "WARNING: I am not responsible for damages done to your device. You must always read the contents of a script you download from the Internet."
 
-    echo -e "\nDo you want to proceed? [y/n]"
-    read response
+    echo -e "\n"
+    read -p "Do you want to proceed? [y/n]" response
 
-    echo "Debug: response='$response'"
     case $response in
         [yY])
             select_device

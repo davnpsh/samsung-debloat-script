@@ -14,6 +14,8 @@ debloat() {
     url=$1
     temp_file="/data/local/tmp/debloat_list.txt"
 
+    curl -sSL -o $temp_file "$url"
+
     while IFS= read -r line; do
         # Skip empty lines and lines starting with # (comments)
         if [ -z "$line" ] || [ "${line:0:1}" = "#" ]; then

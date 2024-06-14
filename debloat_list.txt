@@ -69,3 +69,4 @@ com.netflix.mediaclient
 com.diotek.sec.lookup.dictionary
 com.zhiliaoapp.musically
 
+# DON'T REMOVE THIS LINE

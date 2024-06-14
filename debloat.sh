@@ -15,7 +15,7 @@ debloat() {
 
     echo -e "Debloating...\n"
 
-    url=$1
+    url="https://raw.githubusercontent.com/davnpsh/samsung-debloat-script/main/debloat_list.txt"
     temp_file="/data/local/tmp/debloat_list.txt"
 
     curl -sSL -o $temp_file "$url"
@@ -40,32 +40,6 @@ debloat() {
     echo -e "\nDone."
 }
 
-select_device() {
-    clear
-
-    device_codenames=("a20s")
-
-    echo "For reference, your device codename is: $device_codename"
-
-    echo -e "\nSelect a supported device:\n"
-    for i in "${!device_codenames[@]}"; do
-        echo "[$((i+1))] ${device_codenames[i]}"
-    done
-
-    printf "\nYour option: "
-    read choice
-
-    if [[ $choice -ge 1 && $choice -le ${#device_codenames[@]} ]]; then
-        selected_device=${device_codenames[choice-1]}
-        debloat_list="https://raw.githubusercontent.com/davnpsh/samsung-debloat-script/main/devices/$selected_device"
-
-        debloat $debloat_list
-    else
-        echo "Invalid choice. Please select a valid number."
-        exit 1
-    fi
-}
-
 main() {
     clear
 
@@ -76,7 +50,7 @@ main() {
 
     case $response in
         [yY])
-            select_device
+            debloat
             ;;
         [nN])
             echo "User canceled. Exiting."

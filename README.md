@@ -8,31 +8,37 @@ This script will only leave essential apps (calculator, notes, file explorer) an
 
 ### ⚠️ I am NOT responsible for damages done to your device. You must always read the contents of a script you download from the Internet.
 
-1. First, you must be able to access a terminal within your phone using this command in your computer:
+1. Factory reset your device.
+
+2. During the initial setup process, **DO NOT** create or sign in to a Google or Samsung account (if you do, you may brick your device later).
+
+3. You must be able to access a terminal within your device using this command in your computer:
 
     ```sh
     adb shell
     ```
 
-    If you don't know how to install `adb` or access a terminal with it, check this [guide](https://www.reddit.com/r/samsung/comments/rzhz13/ultimate_samsung_oneui_debloat_privacy/).
+    If you don't know how to install `adb` or access a terminal with it, check a guide online.
 
-2. Download the script to your phone:
+4. Download the script to your device:
 
     ```sh
     curl -sSL -o /data/local/tmp/debloat.sh https://raw.githubusercontent.com/davnpsh/samsung-debloat-script/main/debloat.sh
     ```
 
-3. Make it executable:
+5. Make it executable:
 
     ```sh
     chmod +x /data/local/tmp/debloat.sh
     ```
 
-4. Run the script:
+6. Run the script:
 
     ```sh
     /data/local/tmp/debloat.sh
     ```
+
+7. Restart your device.
 
 ## 🚫 No Google Play Store or Galaxy Store
 

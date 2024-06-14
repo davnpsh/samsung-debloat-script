@@ -68,3 +68,4 @@ com.samsung.android.mapsagent
 com.netflix.mediaclient
 com.diotek.sec.lookup.dictionary
 com.zhiliaoapp.musically
+

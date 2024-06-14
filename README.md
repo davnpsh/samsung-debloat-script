@@ -1,8 +1,8 @@
-# Samsung De-bloat Script (SDS)
+# Samsung Debloat Script (SDS)
 
 This is a script to automate the process of debloating a Samsung phone. In the `debloat_list.txt` file are packages that will **remove Google and Samsung bloatware** (as well as other apps such as Facebook, Netflix, etc.).
 
-This script will only leave essential apps (calculator, notes, file explorer) and also features (Smart Switch, Android Auto and connectivity in general), so this **WON'T** handicap your phone. I tested this configuration for more than half a year and it works perfectly fine.
+This script will only leave essential apps (calculator, notes, file explorer) and most features (Smart Switch, Android Auto and connectivity in general), so this **WON'T** handicap your phone. I tested this configuration for more than half a year and it works perfectly fine.
 
 ## Run the script
 

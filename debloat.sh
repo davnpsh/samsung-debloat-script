@@ -1,7 +1,5 @@
 #!/system/bin/sh
 
-device_codename=$(getprop ro.product.device)
-
 search() {
     pm list packages | grep -x "package:$1"
 }

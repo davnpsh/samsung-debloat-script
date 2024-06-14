@@ -10,15 +10,17 @@ This script will only leave essential apps (calculator, notes, file explorer) an
 
 1. Factory reset your device.
 
-2. During the initial setup process, **DO NOT** create or sign in to a Google or Samsung account (if you do, you may brick your device later).
+2. Turn the device on and, during the initial setup process, **DO NOT** create or sign in to a Google or Samsung account (if you do, you may brick your device later).
 
-3. You must be able to access a terminal within your device using this command in your computer:
+3. Finish the setup and let the device finish installing and updating all the apps it needs.
+
+3. Open a terminal and use this command in your computer with your phone or Samsung device linked to it:
 
     ```sh
     adb shell
     ```
 
-    If you don't know how to install `adb` or access a terminal with it, check a guide online.
+    If you don't know how to install `adb` or use it, check a guide online.
 
 4. Download the script to your device:
 

@@ -19,10 +19,13 @@ com.android.vending
 com.google.android.tts
 com.google.android.apps.tachyon
 com.google.android.youtube
+com.google.android.apps.messaging
+com.google.android.apps.youtube.music
 # i use maps, so uncomment if you use another app
 # com.google.android.apps.maps
 
 # SAMSUNG
+com.dti.samsung
 com.samsung.android.rubin.app
 com.sec.android.widgetapp.samsungapps
 com.sec.android.app.samsungapps
@@ -30,14 +33,26 @@ com.samsung.android.themestore
 com.samsung.android.themecenter
 com.sec.android.app.billing
 com.samsung.android.scloud
+com.samsung.android.scpm
 com.opera.max.oem
 com.osp.app.signin
-
-# SAMSUNG KNOX
-com.sec.enterprise.knox.cloudmdm.smdms
+com.samsung.android.samsungpass
+com.samsung.android.samsungpassautofill
+com.samsung.android.spayfw
+com.samsung.android.game.gamehome
+com.samsung.android.app.spage
 
 # SAMSUNG BIXBY
 com.samsung.android.app.settings.bixby
+
+# SAMSUNG AR
+com.samsung.android.ardrawing
+com.samsung.android.aremoji
+com.samsung.android.aremojieditor
+com.sec.android.miimage.avatarstickers
+com.samsung.android.arzone
+com.google.ar.core
+com.sec.android.autodoodle.service
 
 # FACEBOOK
 com.facebook.katana
@@ -49,5 +64,7 @@ com.facebook.services
 com.microsoft.skydrive
 
 # 3RD PARTY
+com.samsung.android.mapsagent
 com.netflix.mediaclient
-
+com.diotek.sec.lookup.dictionary
+com.zhiliaoapp.musically
